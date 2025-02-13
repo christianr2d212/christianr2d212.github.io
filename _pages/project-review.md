@@ -10,3 +10,8 @@ description: >
 ---
 
 This is my project review. It was written on {{ page.date }} and falls under the category of: {{ page.category }}.
+
+*beep boop*
+## Introduction
+
+This is the intro to **my review**
