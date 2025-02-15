@@ -15,7 +15,7 @@ This is my project review. It was written on {{ page.date }} and falls under the
 
 ## Ideas for Project Review
 
-I'm thinking of reviewing the *On Broadway* data project by Lev Manovich which analyzes data from a single street in NYC. It incorporates data like twitter, instagram posts, taxi pickups, and household income along a 13 mile stretch of a street.
+I'm thinking of reviewing the *On Broadway* data project by Lev Manovich which analyzes data from a single street in NYC. It incorporates data like twitter, instagram posts, taxi pickups, and household income along a 13 mile stretch of a street. [Link to Project](http://www.on-broadway.nyc)
 
 ## Introduction
 
