@@ -19,8 +19,10 @@ I'm thinking of reviewing the *On Broadway* data project by Lev Manovich which a
 
 ## Introduction
 
+
 This is the intro to **my review**
 
+## Screenshot 
 <div align="center">
   <p><img src="/assets/img/example-screenshot.png" style="width: 80%;" /></p>
 </div>
