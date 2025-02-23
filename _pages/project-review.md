@@ -19,7 +19,7 @@ This is my project review. It was written on {{ page.date }} and falls under the
 the **On Broadway** data project by Lev Manovich which analyzes data from a single street in NYC. It incorporates data like twitter, instagram posts, taxi pickups, and household income along a 13 mile stretch of a street. [Link to Project.](http://www.on-broadway.nyc)
 
 
-### Test
+### Screenshot of the project
 
 <div align="center">
   <p><img src="/assets/img/on-broadway-app-sc.png" style="width: 80%;" /></p>
