@@ -11,9 +11,7 @@ description: >
 
 This is my project review. It was written on {{ page.date }} and falls under the category of: {{ page.category }}.
 
-*beep beep*
 
-## Ideas for Project Review
 
  
 
@@ -21,8 +19,19 @@ This is my project review. It was written on {{ page.date }} and falls under the
 the *On Broadway* data project by Lev Manovich which analyzes data from a single street in NYC. It incorporates data like twitter, instagram posts, taxi pickups, and household income along a 13 mile stretch of a street. [Link to Project](http://www.on-broadway.nyc)
 This project analyzes five datasets,  mapped around a single 13-mile stretch of a street in NYC. Data included is 2014 Twitter and Instagram posts, along with Foursquare check-ins, taxi pickups, and median household income. Google street view images of the are also added in the final project to situate what you're looking at. Overall the project intrepreted a lot of income inequality  reflected in the data. Often the south end of Broadway street was more affluent and carried more social media and taxi activity. The more north you got, the less activity on social media and taxi dropoffs. The end result is a massive interactive timeline, where a user can scroll (or touch) different parts of the timeline to show data for a specific block of Broadway St in NYC. You can lock at instagram photos of people in Harlem, or see how many taxi pickups go to places like Times Square or Columbia University, which are all on Broadway. There are quick anecdotes and notes about where landmarks are to help guide and provide context for the data. This along with the separate data plots and visualizations are some of the project's biggest strengths.
 
+<div align="center">
+  <p><img src="/assets/img/onbroadway-sc1.png" style="width: 80%;" /></p>
+</div>
 
-It is possible to view data individually on its own dataset in the website, or juxtaposed all together in the application. In total the application has 13 data layers based off the data! Color and size is used to represent daily taxi trips, and social media posts. The colors themselves are very fitting as well, blue dots for twitter, yellow for taxi. It also is suprisingly accessible even though the application was made for large touch-screens. 
+
+
+It is possible to view their datasets individually on the website's landing page. It is all juxtaposed together in the application. In total the application has 13 data layers based off the data! Color and size is used to represent daily taxi trips, and social media posts. The colors themselves are very fitting as well, blue dots for twitter, yellow for taxi. It also is suprisingly accessible even though the application was made for large touch-screens. 
+
+
+<div align="center">
+  <p><img src="/assets/img/onbroadway-sc2.png" style="width: 80%;" /></p>
+</div>
+
 
 
 However, it feels like there could've been more elaboration on data, in particular the twitter and foursquare datasets. It would be great to hear an analysis on what businesses people checked-in to or what people were tweeting about. The project instead just lists how many check-ins or tweets were made per day similar to the instagram data. One aspect of their intrepretation of this data is that Broadway is like the city's human spine. But a data layer like the instagram photo colors doesn't communicate that message well compared to the layer on facade colors. There's also an added uncertainty that the data collected from social networks may not be entirely all the tweets or instagram photos from Broadway. Many users do not geolocate their accounts and socials, so there could be a lot of activity uncounted for. Despite these faults, the application for this data project runs well and is easy to navigate. The ease of accessibility could've been a reason why they couldn't make a data layer of tweets or foursquare check-ins. Visually, it's a bit difficult to display something that's primarily blocks of texts in such a compact way with 13 other layers of data. So that could potentially be a reason for why tweets and check-ins are more quantitative than qualitative. The instagram data is represented both qualitatively and quantitatively, so it makes the other social media data feel a little lacking.
@@ -33,10 +42,9 @@ As a person who has never touched the East Coast or New York, I found this proje
 
 
 
-
-## Screenshot of data
+## Screenshot of the data project
 <div align="center">
-  <p><img src="/assets/img/example-screenshot.png" style="width: 80%;" /></p>
+  <p><img src="/assets/img/on-broadway-app-sc.png" style="width: 80%;" /></p>
 </div>
 
 
