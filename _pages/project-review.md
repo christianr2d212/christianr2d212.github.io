@@ -18,10 +18,11 @@ This is my project review. It was written on {{ page.date }} and falls under the
 ## Introduction
 the **On Broadway** data project by Lev Manovich which analyzes data from a single street in NYC. It incorporates data like twitter, instagram posts, taxi pickups, and household income along a 13 mile stretch of a street. [Link to Project.](http://www.on-broadway.nyc)
 
-## Screenshot of the data project
+
 <div align="center">
   <p><img src="/assets/img/on-broadway-app-sc.png" style="width: 80%;" /></p>
 </div>
+#### What the data project actually looks like
 
 This project analyzes five datasets,  mapped around a single 13-mile stretch of a street in NYC. Data included is 2014 Twitter and Instagram posts, along with Foursquare check-ins, taxi pickups, and median household income. Google street view images of the are also added in the final project to situate what you're looking at. Overall the project intrepreted a lot of income inequality  reflected in the data. Often the south end of Broadway street was more affluent and carried more social media and taxi activity. The more north you got, the less activity on social media and taxi dropoffs. The end result is a massive interactive timeline, where a user can scroll (or touch) different parts of the timeline to show data for a specific block of Broadway St in NYC. You can lock at instagram photos of people in Harlem, or see how many taxi pickups go to places like Times Square or Columbia University, which are all on Broadway. There are quick anecdotes and notes about where landmarks are to help guide and provide context for the data. This along with the separate data plots and visualizations are some of the project's biggest strengths.
 
