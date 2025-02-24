@@ -53,7 +53,7 @@ Ultimately, the creators of **On Broadway** wanted to use data to visually repre
 
 
 
-As a person who has never touched the East Coast or New York, I found this project incredibly descriptive and aesthetically pleasing to look at. It still gave me this feeling of whimsy a large metropolis like New York gives, but with data and collages of instagram photos. It still leaves me wondering many things about New York, like is this really representative of all network activity in Harlem? There had to have been some landmark or place to give an anecdote about. I had a great trip through "Broadway 1." But I still want to explore more data around "Broadway 2" like Columbia University, which had a small but slight uptick in median household income.
+As a person who has never touched the East Coast or New York, I found this project incredibly descriptive and aesthetically pleasing to look at. It still gave me this feeling of awe a large metropolis like New York gives, but with data and collages of instagram photos. I'm left wondering many things about New York, like is this really representative of all network activity in Harlem? There had to have been some landmark or place to give an anecdote about. I had a great trip through "Broadway 1." But I still want to explore more data around "Broadway 2" like Columbia University, which had a small but slight uptick in median household income. Maybe even an expansion of taxi data to include bus or other transit like Uber.
 
 
 
