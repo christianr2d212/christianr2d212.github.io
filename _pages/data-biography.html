@@ -8,8 +8,6 @@ date: 2025-01-01
 description: >
   This is my data biography assignment
 ---
-
-
 <!DOCTYPE html>
 
 <html lang="en">
@@ -7522,17 +7520,18 @@ a.anchor-link {
 <!-- End of mermaid configuration --></head>
 <body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light">
 <main>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=0b96dbef-ac20-412d-bbfa-9eea12ba9fd5">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=05d7bdff-de96-4103-9616-6f2162592d74">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Data-Biography">Data Biography<a class="anchor-link" href="#Data-Biography">¶</a></h1>
+<p>From 1924-1926, the Denver Chapter of the KKK collected 29600 entries of it's member applications in two ledgers. A worker from the Rocky Mountain News then donated these ledgers to the State Historical Society (now <a href="https://coloradoencyclopedia.org/article/history-colorado-colorado-historical-society">History Colorado</a>). Around 1990, History Colorado accessioned the KKK ledgers into their research center so researchers could look at the books. History Colorado then <a href="https://www.historycolorado.org/kkkledgers">digitzed the ledgers</a>in the 2000s as a way to make the data more accessible to the public. The two ledgers were made into pdf files that are accesible through hyperlinks on the History Colorado (HC) website and in the dataset itself.</p>
+<p>The index file contains the data of both ledgers, making it easier <a href="https://www.historycolorado.org/sites/default/files/media/document/2021/Quick%20Tips%20for%20Searching%20KKK%20Index.pdf">to search for KKK members</a> across both ledgers. This is the dataset I am using to make the pandas dataframe.</p>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=f61c3c4c-c5b2-48f5-a487-9d155ab9e9fd">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=83cf4eab-e323-4f41-98e6-58e542bd2d52">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7540,23 +7539,1767 @@ a.anchor-link {
 <div class="jp-InputPrompt jp-InputArea-prompt">In [2]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">plotly.express</span> <span class="k">as</span> <span class="nn">pd</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="n">kkk_df</span><span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">"kkk-ledgers-index.csv"</span><span class="p">,</span><span class="n">encoding</span><span class="o">=</span><span class="s1">'utf-8'</span><span class="p">)</span>
+
+
+<span class="n">pd</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">max_rows</span><span class="o">=</span><span class="mi">50</span>
 </pre></div>
 </div>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=cffed323-f2cf-4ad6-9394-9735885889c9">
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
+<pre>/var/folders/9n/gp925nr113qgy0k5zrctqkcm0000gn/T/ipykernel_91236/4090270963.py:2: DtypeWarning: Columns (33) have mixed types. Specify dtype option on import or set low_memory=False.
+  kkk_df= pd.read_csv("kkk-ledgers-index.csv",encoding='utf-8')
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=46962ef3-7eff-498d-99bd-b7d6c569288c">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>The physical KKK membership books themselves are on view at the History Colorado Center in Downtown Denver. Recently, History Colorado created a data visualization in the form of a map for the addresses within the KKK ledgers. It maps addresses where KKK members lived, worked, and even recreated, on a map of Denver. The map is a Google Map of Denver today, so addresses are not entirely accurate because streets and buildings have moved.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=ff14997e-b2a0-4c3b-bdc8-bb8404adfb6d">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<iframe height="480" src="https://www.google.com/maps/d/embed?mid=1Pyfnddh9OB0Ip5KKltGkgPXnFvDlve5s&amp;ehbc=2E312F" width="640"></iframe>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=fafba4e7-2955-4c11-bab2-87db9ea6a1cf">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>The ledgers and dataset recorded member's names and both their work and residence address. The data is a way for people to see the prevalance of the KKK in Denver during the 1920s. Many addresses, recreation areas, and business are tied with the KKK by being listed in the ledger, such as National Banks, Fire Departments, and the State Capitol. Former Denver Mayor Ben F. Stapleton is on the list as 'BF Stapleton.'</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=c617b2a9-fa32-4f3b-93c0-89d2965b1bee">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [6]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span> 
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">kkk_df</span><span class="p">[</span><span class="s1">'Notes &amp; Remarks'</span><span class="p">]</span> <span class="o">=</span> <span class="n">kkk_df</span><span class="p">[</span><span class="s2">"Notes &amp; Remarks"</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+<span class="n">kkk_df</span><span class="p">[</span><span class="n">kkk_df</span><span class="p">[</span><span class="s2">"fullName"</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s1">'Stapleton'</span><span class="p">)]</span>
 </pre></div>
 </div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[6]:</div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>itemID</th>
+<th>Number</th>
+<th>fullName</th>
+<th>Prefix</th>
+<th>Last Name</th>
+<th>First Name</th>
+<th>Middle Name</th>
+<th>Suffix</th>
+<th>residenceAddress1</th>
+<th>residenceAddress2</th>
+<th>...</th>
+<th>ledger</th>
+<th>link</th>
+<th>Ledger Link</th>
+<th>Page</th>
+<th>pdfFileName</th>
+<th>symbolExists</th>
+<th>sNumber</th>
+<th>sErased</th>
+<th>Notes &amp; Remarks</th>
+<th>Column 29</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>628</th>
+<td>K00629</td>
+<td>1128.0</td>
+<td>BF Stapleton</td>
+<td>NaN</td>
+<td>Stapleton</td>
+<td>BF</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>430 Williams</td>
+<td>NaN</td>
+<td>...</td>
+<td>MSS.366.5</td>
+<td>h-co.org/ledger2</td>
+<td>MSS.366.5</td>
+<td>32</td>
+<td>mss366-5_FC-p74_QC</td>
+<td>False</td>
+<td>True</td>
+<td>False</td>
+<td>NaN</td>
+<td>NaN</td>
+</tr>
+<tr>
+<th>14718</th>
+<td>K14719</td>
+<td>25717.0</td>
+<td>Arthur W Stapleton</td>
+<td>NaN</td>
+<td>Stapleton</td>
+<td>Arthur</td>
+<td>W</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>...</td>
+<td>MSS.366.5</td>
+<td>h-co.org/ledger2</td>
+<td>MSS.366.5</td>
+<td>651</td>
+<td>mss366-5_p602-676_QC</td>
+<td>False</td>
+<td>True</td>
+<td>False</td>
+<td>NaN</td>
+<td>NaN</td>
+</tr>
+<tr>
+<th>15504</th>
+<td>K15505</td>
+<td>46318.0</td>
+<td>John Stapleton Rickman</td>
+<td>NaN</td>
+<td>Rickman</td>
+<td>John</td>
+<td>Stapleton</td>
+<td>NaN</td>
+<td>1014 East 10th Ave</td>
+<td>NaN</td>
+<td>...</td>
+<td>MSS.366.5</td>
+<td>h-co.org/ledger2</td>
+<td>MSS.366.5</td>
+<td>687</td>
+<td>mss366-5_p677-742_QC</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+<td>NaN</td>
+<td>NaN</td>
+</tr>
+</tbody>
+</table>
+<p>3 rows × 34 columns</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=e75d134a-d0ce-44e1-a1dd-59236966f259">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Bringing up the Stapleton name is an example of important political and cultural context to keep in mind about this data. Namely, about the prevalance of KKK members in Colorado's 1920 politics. The KKK frequently had periods of decline and resurgence, and the 1920s is one of them. Colorado at one point had the <a href="https://youtu.be/PO5PMbtF1t8?si=2J_gIOA9oI9aGaeM">second highest</a> per-capita KKK membership in United States. The surge in KKK membership came from increased xenophobia after increased immigration of Italians, Jewish people, and Mexicans to the U.S in the early 1900s. According to RMPBS <a href="https://youtu.be/PO5PMbtF1t8?si=2J_gIOA9oI9aGaeM"><em>Colorado Experience</em></a>, lynchings of people of color in Colorado were common during the 1920s, including but not limited to Black, Mexican, and Italian people.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=2f6c259a-20e3-44ca-a0d6-ba8a6a68ab9a">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="About-the-Data">About the Data<a class="anchor-link" href="#About-the-Data">¶</a></h2><p>There are about 34 columns within the dataset. Many of the columns are extra columns for string data like business or residence addresses. Ledger links and references to what page of the ledger take up 5 columns. There are 3 columns with boolean values. The first simply seems to tell whether or not a symbol was written next to someone's name in the ledger. The last two, 'sNumber and sErased' are a bit unclear. In the physical ledgers some members have an 's' written next to their membership number. If the s is faded or erased then the index lists both the columns as true. There is no clear reason for why this is noted.</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=12174d9a-47ce-470d-83ad-d2539f062773">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [9]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">kkk_df</span><span class="p">[</span><span class="n">kkk_df</span><span class="p">[</span><span class="s1">'sErased'</span><span class="p">]</span><span class="o">==</span><span class="kc">True</span><span class="p">][:</span><span class="mi">2</span><span class="p">]</span> <span class="c1">##in place this will be a screenshot of page 28 ledgers</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[9]:</div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>itemID</th>
+<th>Number</th>
+<th>fullName</th>
+<th>Prefix</th>
+<th>Last Name</th>
+<th>First Name</th>
+<th>Middle Name</th>
+<th>Suffix</th>
+<th>residenceAddress1</th>
+<th>residenceAddress2</th>
+<th>...</th>
+<th>ledger</th>
+<th>link</th>
+<th>Ledger Link</th>
+<th>Page</th>
+<th>pdfFileName</th>
+<th>symbolExists</th>
+<th>sNumber</th>
+<th>sErased</th>
+<th>Notes &amp; Remarks</th>
+<th>Column 29</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>530</th>
+<td>K00531</td>
+<td>1030.0</td>
+<td>W W Phillips</td>
+<td>NaN</td>
+<td>Phillips</td>
+<td>W</td>
+<td>W</td>
+<td>NaN</td>
+<td>2955 York St.</td>
+<td>NaN</td>
+<td>...</td>
+<td>MSS.366.5</td>
+<td>h-co.org/ledger2</td>
+<td>MSS.366.5</td>
+<td>28</td>
+<td>mss366-5_FC-p74_QC</td>
+<td>True</td>
+<td>True</td>
+<td>True</td>
+<td>NaN</td>
+<td>NaN</td>
+</tr>
+<tr>
+<th>539</th>
+<td>K00540</td>
+<td>1039.0</td>
+<td>D K Proffitt</td>
+<td>NaN</td>
+<td>Proffitt</td>
+<td>D</td>
+<td>K</td>
+<td>NaN</td>
+<td>1617 Fillmore</td>
+<td>NaN</td>
+<td>...</td>
+<td>MSS.366.5</td>
+<td>h-co.org/ledger2</td>
+<td>MSS.366.5</td>
+<td>28</td>
+<td>mss366-5_FC-p74_QC</td>
+<td>True</td>
+<td>True</td>
+<td>True</td>
+<td>NaN</td>
+<td>NaN</td>
+</tr>
+</tbody>
+</table>
+<p>2 rows × 34 columns</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=3870fc1a-8480-4d7c-b15a-15177c20c200">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<div align="center">
+<img alt="Description of image" src="../assets/img/page-28-1.png" style="border: 2px solid" width="60%"/>
+<figcaption style="font-style: italic">
+    What Phillips's entry looks like in the ledger. Symbol written next to his name, along with an 's' next to his number that's faded out
+  </figcaption>
+</div>
+<div align="center">
+<img alt="Description of image" src="../assets/img/page-28-2.png" style="border: 2px solid" width="60%"/>
+<figcaption style="font-style: italic">
+    Same page of the ledger, but with Proffitt's entry and another entry in comparison. Proffitt's entry has the 's' faded out.
+  </figcaption>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=51f88f3e-ec03-46d1-9c56-bd49dc4117e5">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>The last two columns lists notes and annotations physically written on the ledgers. They list whatever was written on top of someone's name, such as whether they resigned, died, or banished. Column 29 is also made for this purpose, but it only has one entry of someone who resigned. This more than likely was added by History Colorado, as the ledger entry itself looks like a regular entry.</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=38e25100-c220-4056-b7fe-97dc8804f47d">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [12]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">kkk_df</span><span class="p">[</span><span class="n">kkk_df</span><span class="p">[</span><span class="s1">'Column 29'</span><span class="p">]</span><span class="o">.</span><span class="n">notna</span><span class="p">()]</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[12]:</div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>itemID</th>
+<th>Number</th>
+<th>fullName</th>
+<th>Prefix</th>
+<th>Last Name</th>
+<th>First Name</th>
+<th>Middle Name</th>
+<th>Suffix</th>
+<th>residenceAddress1</th>
+<th>residenceAddress2</th>
+<th>...</th>
+<th>ledger</th>
+<th>link</th>
+<th>Ledger Link</th>
+<th>Page</th>
+<th>pdfFileName</th>
+<th>symbolExists</th>
+<th>sNumber</th>
+<th>sErased</th>
+<th>Notes &amp; Remarks</th>
+<th>Column 29</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>2204</th>
+<td>K02205</td>
+<td>13203.0</td>
+<td>Arvid A Seurbom</td>
+<td>NaN</td>
+<td>Seurbom</td>
+<td>Arvid</td>
+<td>A</td>
+<td>NaN</td>
+<td>3455 Adams</td>
+<td>NaN</td>
+<td>...</td>
+<td>MSS.366.5</td>
+<td>h-co.org/ledger2</td>
+<td>MSS.366.5</td>
+<td>101</td>
+<td>mss366-5_p75-149_QC</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+<td>name struck; "</td>
+<td>RESIGNED 5-27-26"</td>
+</tr>
+</tbody>
+</table>
+<p>1 rows × 34 columns</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=5f51a764-a821-4347-b0ef-0cdb507a41cb">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>A closer look at the Notes and Remarks columns can show how many people in the Greater Denver KKK had their names struck and for what reason. Reasons included banishment, death, resignation, suspension, etc.</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=1e1a5794-aa72-4ef8-bfd0-d684553b7229">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [14]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">notes_df</span><span class="o">=</span> <span class="n">kkk_df</span><span class="p">[</span><span class="n">kkk_df</span><span class="p">[</span><span class="s1">'Notes &amp; Remarks'</span><span class="p">]</span><span class="o">.</span><span class="n">notna</span><span class="p">()]</span>
+
+<span class="n">notes_df</span><span class="p">[</span><span class="n">notes_df</span><span class="p">[</span><span class="s1">'Notes &amp; Remarks'</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s1">'resigned'</span><span class="p">)]</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[14]:</div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>itemID</th>
+<th>Number</th>
+<th>fullName</th>
+<th>Prefix</th>
+<th>Last Name</th>
+<th>First Name</th>
+<th>Middle Name</th>
+<th>Suffix</th>
+<th>residenceAddress1</th>
+<th>residenceAddress2</th>
+<th>...</th>
+<th>ledger</th>
+<th>link</th>
+<th>Ledger Link</th>
+<th>Page</th>
+<th>pdfFileName</th>
+<th>symbolExists</th>
+<th>sNumber</th>
+<th>sErased</th>
+<th>Notes &amp; Remarks</th>
+<th>Column 29</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>69</th>
+<td>K00070</td>
+<td>569.0</td>
+<td>Herbert R Borchard</td>
+<td>NaN</td>
+<td>Borchard</td>
+<td>Herbert</td>
+<td>R</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>12101 E. Colfax Ave.*</td>
+<td>...</td>
+<td>MSS.366.5</td>
+<td>h-co.org/ledger2</td>
+<td>MSS.366.5</td>
+<td>8</td>
+<td>mss366-5_FC-p74_QC</td>
+<td>False</td>
+<td>False</td>
+<td>False</td>
+<td>name struck; "resigned"</td>
+<td>NaN</td>
+</tr>
+<tr>
+<th>113</th>
+<td>K00114</td>
+<td>613.0</td>
+<td>David T Chalmers</td>
+<td>NaN</td>
+<td>Chalmers</td>
+<td>David</td>
+<td>T</td>
+<td>NaN</td>
+<td>854 Clarkson</td>
+<td>NaN</td>
+<td>...</td>
+<td>MSS.366.5</td>
+<td>h-co.org/ledger2</td>
+<td>MSS.366.5</td>
+<td>9</td>
+<td>mss366-5_FC-p74_QC</td>
+<td>False</td>
+<td>False</td>
+<td>False</td>
+<td>name struck; "resigned 6-1-23"</td>
+<td>NaN</td>
+</tr>
+<tr>
+<th>120</th>
+<td>K00121</td>
+<td>620.0</td>
+<td>J W Clark</td>
+<td>NaN</td>
+<td>Clark</td>
+<td>J</td>
+<td>W</td>
+<td>NaN</td>
+<td>3125 W 21st Ave</td>
+<td>NaN</td>
+<td>...</td>
+<td>MSS.366.5</td>
+<td>h-co.org/ledger2</td>
+<td>MSS.366.5</td>
+<td>10</td>
+<td>mss366-5_FC-p74_QC</td>
+<td>False</td>
+<td>True</td>
+<td>False</td>
+<td>name struck; "resigned - 2-7-27"</td>
+<td>NaN</td>
+</tr>
+<tr>
+<th>311</th>
+<td>K00312</td>
+<td>811.0</td>
+<td>Frank II Heart</td>
+<td>NaN</td>
+<td>Heart</td>
+<td>Frank</td>
+<td>II</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>17th &amp; Broadway*</td>
+<td>...</td>
+<td>MSS.366.5</td>
+<td>h-co.org/ledger2</td>
+<td>MSS.366.5</td>
+<td>18</td>
+<td>mss366-5_FC-p74_QC</td>
+<td>False</td>
+<td>False</td>
+<td>False</td>
+<td>"resigned "</td>
+<td>NaN</td>
+</tr>
+<tr>
+<th>316</th>
+<td>K00317</td>
+<td>816.0</td>
+<td>R Hosea</td>
+<td>NaN</td>
+<td>Hosea</td>
+<td>R</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>...</td>
+<td>MSS.366.5</td>
+<td>h-co.org/ledger2</td>
+<td>MSS.366.5</td>
+<td>18</td>
+<td>mss366-5_FC-p74_QC</td>
+<td>False</td>
+<td>False</td>
+<td>False</td>
+<td>"resigned"</td>
+<td>NaN</td>
+</tr>
+<tr>
+<th>...</th>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+</tr>
+<tr>
+<th>15466</th>
+<td>K15467</td>
+<td>46280.0</td>
+<td>Arthur B Porter</td>
+<td>NaN</td>
+<td>Porter</td>
+<td>Arthur</td>
+<td>B</td>
+<td>NaN</td>
+<td>3436 W 8th Ave</td>
+<td>NaN</td>
+<td>...</td>
+<td>MSS.366.5</td>
+<td>h-co.org/ledger2</td>
+<td>MSS.366.5</td>
+<td>685</td>
+<td>mss366-5_p677-742_QC</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+<td>name struck; "resigned 9-1-25"</td>
+<td>NaN</td>
+</tr>
+<tr>
+<th>15762</th>
+<td>K15763</td>
+<td>46576.0</td>
+<td>A C Pierce</td>
+<td>NaN</td>
+<td>Pierce</td>
+<td>A</td>
+<td>C</td>
+<td>NaN</td>
+<td>1049 W Evans</td>
+<td>NaN</td>
+<td>...</td>
+<td>MSS.366.5</td>
+<td>h-co.org/ledger2</td>
+<td>MSS.366.5</td>
+<td>698</td>
+<td>mss366-5_p677-742_QC</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+<td>name struck; "m. m. demits resigned 6/30/26"</td>
+<td>NaN</td>
+</tr>
+<tr>
+<th>15818</th>
+<td>K15819</td>
+<td>46632.0</td>
+<td>Homer C Becktell</td>
+<td>NaN</td>
+<td>Becktell</td>
+<td>Homer</td>
+<td>C</td>
+<td>NaN</td>
+<td>2308 W 30th Ave</td>
+<td>NaN</td>
+<td>...</td>
+<td>MSS.366.5</td>
+<td>h-co.org/ledger2</td>
+<td>MSS.366.5</td>
+<td>700</td>
+<td>mss366-5_p677-742_QC</td>
+<td>False</td>
+<td>False</td>
+<td>False</td>
+<td>name struck; "resigned 1-13-26"</td>
+<td>NaN</td>
+</tr>
+<tr>
+<th>16071</th>
+<td>K16072</td>
+<td>47137.0</td>
+<td>Ray W Colyer</td>
+<td>NaN</td>
+<td>Colyer</td>
+<td>Ray</td>
+<td>W</td>
+<td>NaN</td>
+<td>4100 Bryant</td>
+<td>NaN</td>
+<td>...</td>
+<td>MSS.366.5</td>
+<td>h-co.org/ledger2</td>
+<td>MSS.366.5</td>
+<td>712</td>
+<td>mss366-5_p677-742_QC</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+<td>name struck; "resigned - 5-10-27"</td>
+<td>NaN</td>
+</tr>
+<tr>
+<th>16496</th>
+<td>K16497</td>
+<td>47562.0</td>
+<td>Oscar Odell</td>
+<td>NaN</td>
+<td>Odell</td>
+<td>Oscar</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>1011 19th*</td>
+<td>...</td>
+<td>MSS.366.5</td>
+<td>h-co.org/ledger2</td>
+<td>MSS.366.5</td>
+<td>731</td>
+<td>mss366-5_p677-742_QC</td>
+<td>False</td>
+<td>False</td>
+<td>False</td>
+<td>name struck; "resigned 1-26-26"</td>
+<td>NaN</td>
+</tr>
+</tbody>
+</table>
+<p>215 rows × 34 columns</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=6f2e72b2-2f14-41bd-80c6-075f0355fd87">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Here, in total we have about 215 resignations of KKK members.</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=5ca8dfb0-0c08-4460-857f-e0243499d56f">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [16]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">notes_df</span><span class="p">[</span><span class="n">notes_df</span><span class="p">[</span><span class="s1">'Notes &amp; Remarks'</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s1">'banish'</span><span class="p">)]</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[16]:</div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>itemID</th>
+<th>Number</th>
+<th>fullName</th>
+<th>Prefix</th>
+<th>Last Name</th>
+<th>First Name</th>
+<th>Middle Name</th>
+<th>Suffix</th>
+<th>residenceAddress1</th>
+<th>residenceAddress2</th>
+<th>...</th>
+<th>ledger</th>
+<th>link</th>
+<th>Ledger Link</th>
+<th>Page</th>
+<th>pdfFileName</th>
+<th>symbolExists</th>
+<th>sNumber</th>
+<th>sErased</th>
+<th>Notes &amp; Remarks</th>
+<th>Column 29</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>550</th>
+<td>K00551</td>
+<td>1050.0</td>
+<td>Robert F Reed</td>
+<td>NaN</td>
+<td>Reed</td>
+<td>Robert</td>
+<td>F</td>
+<td>NaN</td>
+<td>1329 So Lincoln</td>
+<td>NaN</td>
+<td>...</td>
+<td>MSS.366.5</td>
+<td>h-co.org/ledger2</td>
+<td>MSS.366.5</td>
+<td>29</td>
+<td>mss366-5_FC-p74_QC</td>
+<td>False</td>
+<td>False</td>
+<td>False</td>
+<td>name struck; " banished"</td>
+<td>NaN</td>
+</tr>
+<tr>
+<th>816</th>
+<td>K00817</td>
+<td>1316.0</td>
+<td>Daniel J Sparr</td>
+<td>NaN</td>
+<td>Sparr</td>
+<td>Daniel</td>
+<td>J</td>
+<td>NaN</td>
+<td>129 Stuart</td>
+<td>NaN</td>
+<td>...</td>
+<td>MSS.366.5</td>
+<td>h-co.org/ledger2</td>
+<td>MSS.366.5</td>
+<td>40</td>
+<td>mss366-5_FC-p74_QC</td>
+<td>False</td>
+<td>False</td>
+<td>False</td>
+<td>name struck; " banished"</td>
+<td>NaN</td>
+</tr>
+<tr>
+<th>1001</th>
+<td>K01002</td>
+<td>2000.0</td>
+<td>Morton MacCormac</td>
+<td>NaN</td>
+<td>MacCormac</td>
+<td>Morton</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>...</td>
+<td>MSS.366.5</td>
+<td>h-co.org/ledger2</td>
+<td>MSS.366.5</td>
+<td>49</td>
+<td>mss366-5_FC-p74_QC</td>
+<td>False</td>
+<td>False</td>
+<td>False</td>
+<td>name struck; " banished"</td>
+<td>NaN</td>
+</tr>
+<tr>
+<th>1161</th>
+<td>K01162</td>
+<td>2160.0</td>
+<td>G L Bogard</td>
+<td>NaN</td>
+<td>Bogard</td>
+<td>G</td>
+<td>L</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>...</td>
+<td>MSS.366.5</td>
+<td>h-co.org/ledger2</td>
+<td>MSS.366.5</td>
+<td>56</td>
+<td>mss366-5_FC-p74_QC</td>
+<td>False</td>
+<td>False</td>
+<td>False</td>
+<td>name struck; "banished- 12/29/24"</td>
+<td>NaN</td>
+</tr>
+<tr>
+<th>2828</th>
+<td>K02829</td>
+<td>13827.0</td>
+<td>R E Strickland</td>
+<td>NaN</td>
+<td>Strickland</td>
+<td>R</td>
+<td>E</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>...</td>
+<td>MSS.366.5</td>
+<td>h-co.org/ledger2</td>
+<td>MSS.366.5</td>
+<td>128</td>
+<td>mss366-5_p75-149_QC</td>
+<td>False</td>
+<td>True</td>
+<td>False</td>
+<td>name struck; "banished"</td>
+<td>NaN</td>
+</tr>
+<tr>
+<th>4939</th>
+<td>K04940</td>
+<td>15938.0</td>
+<td>Chas Root Cavalli</td>
+<td>NaN</td>
+<td>Cavalli</td>
+<td>Chas</td>
+<td>Root</td>
+<td>NaN</td>
+<td>3985 West 1st Ave</td>
+<td>NaN</td>
+<td>...</td>
+<td>MSS.366.5</td>
+<td>h-co.org/ledger2</td>
+<td>MSS.366.5</td>
+<td>221</td>
+<td>mss366-5_p150-224_QC</td>
+<td>False</td>
+<td>False</td>
+<td>False</td>
+<td>name struck; "banished by gd 11-25-24"</td>
+<td>NaN</td>
+</tr>
+<tr>
+<th>6865</th>
+<td>K06866</td>
+<td>17864.0</td>
+<td>Keith Scott Boehm</td>
+<td>NaN</td>
+<td>Boehm</td>
+<td>Keith</td>
+<td>Scott</td>
+<td>NaN</td>
+<td>1532 Glenarm</td>
+<td>NaN</td>
+<td>...</td>
+<td>MSS.366.5</td>
+<td>h-co.org/ledger2</td>
+<td>MSS.366.5</td>
+<td>305</td>
+<td>mss366-5_p300-374_QC</td>
+<td>False</td>
+<td>False</td>
+<td>False</td>
+<td>name struck; "banished by gd 1-6-25"</td>
+<td>NaN</td>
+</tr>
+<tr>
+<th>10173</th>
+<td>K10174</td>
+<td>21172.0</td>
+<td>John W Perry</td>
+<td>NaN</td>
+<td>Perry</td>
+<td>John</td>
+<td>W</td>
+<td>NaN</td>
+<td>2290 Cherry</td>
+<td>NaN</td>
+<td>...</td>
+<td>MSS.366.5</td>
+<td>h-co.org/ledger2</td>
+<td>MSS.366.5</td>
+<td>449</td>
+<td>mss366-5_p375-449_QC</td>
+<td>False</td>
+<td>False</td>
+<td>False</td>
+<td>name struck; "banished by gd - 4/1725"</td>
+<td>NaN</td>
+</tr>
+<tr>
+<th>11994</th>
+<td>K11995</td>
+<td>22993.0</td>
+<td>Clarence R Anderson</td>
+<td>NaN</td>
+<td>Anderson</td>
+<td>Clarence</td>
+<td>R</td>
+<td>NaN</td>
+<td>751 So High</td>
+<td>NaN</td>
+<td>...</td>
+<td>MSS.366.5</td>
+<td>h-co.org/ledger2</td>
+<td>MSS.366.5</td>
+<td>532</td>
+<td>mss366-5_p526-601_QC</td>
+<td>False</td>
+<td>False</td>
+<td>False</td>
+<td>name struck; "banished by gd - 4/28/25"</td>
+<td>NaN</td>
+</tr>
+</tbody>
+</table>
+<p>9 rows × 34 columns</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=055487cc-b758-48a6-b696-4fc772bd12e7">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Between 1924-26 9 people were banished from the Klan.</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=5e5ab794-8a7b-4a42-8790-b385d1bd1b5d">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [18]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">notes_df</span><span class="p">[</span><span class="n">notes_df</span><span class="p">[</span><span class="s1">'Notes &amp; Remarks'</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s1">'suspend'</span><span class="p">)]</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[18]:</div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>itemID</th>
+<th>Number</th>
+<th>fullName</th>
+<th>Prefix</th>
+<th>Last Name</th>
+<th>First Name</th>
+<th>Middle Name</th>
+<th>Suffix</th>
+<th>residenceAddress1</th>
+<th>residenceAddress2</th>
+<th>...</th>
+<th>ledger</th>
+<th>link</th>
+<th>Ledger Link</th>
+<th>Page</th>
+<th>pdfFileName</th>
+<th>symbolExists</th>
+<th>sNumber</th>
+<th>sErased</th>
+<th>Notes &amp; Remarks</th>
+<th>Column 29</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>366</th>
+<td>K00367</td>
+<td>866.0</td>
+<td>Homer R Koen</td>
+<td>NaN</td>
+<td>Koen</td>
+<td>Homer</td>
+<td>R</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>...</td>
+<td>MSS.366.5</td>
+<td>h-co.org/ledger2</td>
+<td>MSS.366.5</td>
+<td>21</td>
+<td>mss366-5_FC-p74_QC</td>
+<td>False</td>
+<td>False</td>
+<td>False</td>
+<td>name struck; " suspended by g.d. 1-26-25-indef."</td>
+<td>NaN</td>
+</tr>
+<tr>
+<th>649</th>
+<td>K00650</td>
+<td>1149.0</td>
+<td>Roger W Taggart</td>
+<td>NaN</td>
+<td>Taggart</td>
+<td>Roger</td>
+<td>W</td>
+<td>NaN</td>
+<td>1356 Pearl</td>
+<td>NaN</td>
+<td>...</td>
+<td>MSS.366.5</td>
+<td>h-co.org/ledger2</td>
+<td>MSS.366.5</td>
+<td>33</td>
+<td>mss366-5_FC-p74_QC</td>
+<td>False</td>
+<td>False</td>
+<td>False</td>
+<td>name struck; " suspended indef. 9/28/23"</td>
+<td>NaN</td>
+</tr>
+<tr>
+<th>1302</th>
+<td>K01303</td>
+<td>2301.0</td>
+<td>W A Cloud</td>
+<td>NaN</td>
+<td>Cloud</td>
+<td>W</td>
+<td>A</td>
+<td>NaN</td>
+<td>1520 Ogden</td>
+<td>NaN</td>
+<td>...</td>
+<td>MSS.366.5</td>
+<td>h-co.org/ledger2</td>
+<td>MSS.366.5</td>
+<td>62</td>
+<td>mss366-5_FC-p74_QC</td>
+<td>False</td>
+<td>True</td>
+<td>False</td>
+<td>name struck; "suspended by g.d 5-15-25"</td>
+<td>NaN</td>
+</tr>
+<tr>
+<th>2179</th>
+<td>K02180</td>
+<td>13178.0</td>
+<td>G C Minor</td>
+<td>NaN</td>
+<td>Minor</td>
+<td>G</td>
+<td>C</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>1441 Glenarm Pl*</td>
+<td>...</td>
+<td>MSS.366.5</td>
+<td>h-co.org/ledger2</td>
+<td>MSS.366.5</td>
+<td>100</td>
+<td>mss366-5_p75-149_QC</td>
+<td>True</td>
+<td>True</td>
+<td>True</td>
+<td>name struck; "suspended feb-1926 by c c"</td>
+<td>NaN</td>
+</tr>
+<tr>
+<th>3116</th>
+<td>K03117</td>
+<td>14115.0</td>
+<td>Carl Law Mahoney</td>
+<td>NaN</td>
+<td>Mahoney</td>
+<td>Carl</td>
+<td>Law</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>...</td>
+<td>MSS.366.5</td>
+<td>h-co.org/ledger2</td>
+<td>MSS.366.5</td>
+<td>142</td>
+<td>mss366-5_p75-149_QC</td>
+<td>False</td>
+<td>True</td>
+<td>False</td>
+<td>name struck; "suspended by gd - 3/26/25"</td>
+<td>NaN</td>
+</tr>
+<tr>
+<th>3860</th>
+<td>K03861</td>
+<td>14859.0</td>
+<td>Ernest Zesch</td>
+<td>NaN</td>
+<td>Zesch</td>
+<td>Ernest</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>1360 W Byers</td>
+<td>NaN</td>
+<td>...</td>
+<td>MSS.366.5</td>
+<td>h-co.org/ledger2</td>
+<td>MSS.366.5</td>
+<td>174</td>
+<td>mss366-5_p150-224_QC</td>
+<td>False</td>
+<td>True</td>
+<td>False</td>
+<td>name struck; "suspended ind. by gd, 3/30/25"</td>
+<td>NaN</td>
+</tr>
+<tr>
+<th>4281</th>
+<td>K04282</td>
+<td>15280.0</td>
+<td>V R Stokes</td>
+<td>NaN</td>
+<td>Stokes</td>
+<td>V</td>
+<td>R</td>
+<td>NaN</td>
+<td>1616 So Downing</td>
+<td>NaN</td>
+<td>...</td>
+<td>MSS.366.5</td>
+<td>h-co.org/ledger2</td>
+<td>MSS.366.5</td>
+<td>193</td>
+<td>mss366-5_p150-224_QC</td>
+<td>False</td>
+<td>True</td>
+<td>False</td>
+<td>name struck; "suspended for 30 days 1-21-25"</td>
+<td>NaN</td>
+</tr>
+<tr>
+<th>5984</th>
+<td>K05985</td>
+<td>16983.0</td>
+<td>Curtis C Godwin</td>
+<td>NaN</td>
+<td>Godwin</td>
+<td>Curtis</td>
+<td>C</td>
+<td>NaN</td>
+<td>2651 W 34th Ave</td>
+<td>NaN</td>
+<td>...</td>
+<td>MSS.366.5</td>
+<td>h-co.org/ledger2</td>
+<td>MSS.366.5</td>
+<td>267</td>
+<td>mss366-5_p225-299_QC</td>
+<td>False</td>
+<td>True</td>
+<td>False</td>
+<td>name struck; "suspended indefinitely by gd - 3...</td>
+<td>NaN</td>
+</tr>
+<tr>
+<th>6669</th>
+<td>K06670</td>
+<td>17668.0</td>
+<td>Arthur B Partridge</td>
+<td>NaN</td>
+<td>Partridge</td>
+<td>Arthur</td>
+<td>B</td>
+<td>NaN</td>
+<td>1037 Fox</td>
+<td>NaN</td>
+<td>...</td>
+<td>MSS.366.5</td>
+<td>h-co.org/ledger2</td>
+<td>MSS.366.5</td>
+<td>297</td>
+<td>mss366-5_p225-299_QC</td>
+<td>False</td>
+<td>True</td>
+<td>False</td>
+<td>name struck; "suspended by g d indefinitely 1/...</td>
+<td>NaN</td>
+</tr>
+<tr>
+<th>7744</th>
+<td>K07745</td>
+<td>18743.0</td>
+<td>Herbert A Donaldson</td>
+<td>NaN</td>
+<td>Donaldson</td>
+<td>Herbert</td>
+<td>A</td>
+<td>NaN</td>
+<td>1268 Marion</td>
+<td>NaN</td>
+<td>...</td>
+<td>MSS.366.5</td>
+<td>h-co.org/ledger2</td>
+<td>MSS.366.5</td>
+<td>343</td>
+<td>mss366-5_p300-374_QC</td>
+<td>False</td>
+<td>False</td>
+<td>False</td>
+<td>name struck; "suspended indefinitely by the g....</td>
+<td>NaN</td>
+</tr>
+<tr>
+<th>9997</th>
+<td>K09998</td>
+<td>20996.0</td>
+<td>Claude Edw Mason</td>
+<td>NaN</td>
+<td>Mason</td>
+<td>Claude</td>
+<td>Edw</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>...</td>
+<td>MSS.366.5</td>
+<td>h-co.org/ledger2</td>
+<td>MSS.366.5</td>
+<td>441</td>
+<td>mss366-5_p375-449_QC</td>
+<td>False</td>
+<td>True</td>
+<td>False</td>
+<td>name struck; "suspended ind. by gd 2/23/25"</td>
+<td>NaN</td>
+</tr>
+<tr>
+<th>10389</th>
+<td>K10390</td>
+<td>21388.0</td>
+<td>Clyde Lorence Magee</td>
+<td>NaN</td>
+<td>Magee</td>
+<td>Clyde</td>
+<td>Lorence</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>...</td>
+<td>MSS.366.5</td>
+<td>h-co.org/ledger2</td>
+<td>MSS.366.5</td>
+<td>459</td>
+<td>mss366-5_p450-524_QC</td>
+<td>False</td>
+<td>True</td>
+<td>False</td>
+<td>name struck; "suspended by gd 12/8/2 indefinit...</td>
+<td>NaN</td>
+</tr>
+<tr>
+<th>10409</th>
+<td>K10410</td>
+<td>21408.0</td>
+<td>Lee R West</td>
+<td>NaN</td>
+<td>West</td>
+<td>Lee</td>
+<td>R</td>
+<td>NaN</td>
+<td>1346 Sherman</td>
+<td>NaN</td>
+<td>...</td>
+<td>MSS.366.5</td>
+<td>h-co.org/ledger2</td>
+<td>MSS.366.5</td>
+<td>460</td>
+<td>mss366-5_p450-524_QC</td>
+<td>False</td>
+<td>True</td>
+<td>False</td>
+<td>name struck; "suspended by gd 3/9/25"</td>
+<td>NaN</td>
+</tr>
+<tr>
+<th>11199</th>
+<td>K11200</td>
+<td>22198.0</td>
+<td>Harold A Hays</td>
+<td>NaN</td>
+<td>Hays</td>
+<td>Harold</td>
+<td>A</td>
+<td>NaN</td>
+<td>1207 California</td>
+<td>NaN</td>
+<td>...</td>
+<td>MSS.366.5</td>
+<td>h-co.org/ledger2</td>
+<td>MSS.366.5</td>
+<td>494</td>
+<td>mss366-5_p450-524_QC</td>
+<td>False</td>
+<td>True</td>
+<td>False</td>
+<td>name struck; "suspended by gd 12/8/24"</td>
+<td>NaN</td>
+</tr>
+<tr>
+<th>13376</th>
+<td>K13377</td>
+<td>24375.0</td>
+<td>Jas Henry Spidle</td>
+<td>NaN</td>
+<td>Spidle</td>
+<td>Jas</td>
+<td>Henry</td>
+<td>NaN</td>
+<td>681 Vallejo</td>
+<td>NaN</td>
+<td>...</td>
+<td>MSS.366.5</td>
+<td>h-co.org/ledger2</td>
+<td>MSS.366.5</td>
+<td>592</td>
+<td>mss366-5_p526-601_QC</td>
+<td>False</td>
+<td>True</td>
+<td>False</td>
+<td>name struck; "suspended ind. by gd, 3/16/25"</td>
+<td>NaN</td>
+</tr>
+<tr>
+<th>13924</th>
+<td>K13925</td>
+<td>24923.0</td>
+<td>Willard Ray Reynolds</td>
+<td>NaN</td>
+<td>Reynolds</td>
+<td>Willard</td>
+<td>Ray</td>
+<td>NaN</td>
+<td>4790 W 5th Ave</td>
+<td>NaN</td>
+<td>...</td>
+<td>MSS.366.5</td>
+<td>h-co.org/ledger2</td>
+<td>MSS.366.5</td>
+<td>616</td>
+<td>mss366-5_p602-676_QC</td>
+<td>False</td>
+<td>True</td>
+<td>False</td>
+<td>"(suspended - 2/10/25 by g.d.)</td>
+<td>NaN</td>
+</tr>
+<tr>
+<th>14446</th>
+<td>K14447</td>
+<td>25445.0</td>
+<td>Earl Moore</td>
+<td>NaN</td>
+<td>Moore</td>
+<td>Earl</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>1933 Arapahoe St</td>
+<td>NaN</td>
+<td>...</td>
+<td>MSS.366.5</td>
+<td>h-co.org/ledger2</td>
+<td>MSS.366.5</td>
+<td>639</td>
+<td>mss366-5_p602-676_QC</td>
+<td>False</td>
+<td>False</td>
+<td>False</td>
+<td>name struck; "suspended 12/23/24 by e c - 60"</td>
+<td>NaN</td>
+</tr>
+<tr>
+<th>14850</th>
+<td>K14851</td>
+<td>25849.0</td>
+<td>V Alley Brissey</td>
+<td>NaN</td>
+<td>Brissey</td>
+<td>V</td>
+<td>Alley</td>
+<td>NaN</td>
+<td>1326 Cherokee St</td>
+<td>NaN</td>
+<td>...</td>
+<td>MSS.366.5</td>
+<td>h-co.org/ledger2</td>
+<td>MSS.366.5</td>
+<td>657</td>
+<td>mss366-5_p602-676_QC</td>
+<td>False</td>
+<td>True</td>
+<td>False</td>
+<td>name struck; "suspended indefinitely by gd - 3...</td>
+<td>NaN</td>
+</tr>
+</tbody>
+</table>
+<p>18 rows × 34 columns</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=f7c25523-bcb8-41c9-83b0-2c7ccbdde6da">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Finally, 18 people were suspended from the KKK according to the ledger. Other reasons included members kicked out of the KKK because they were not naturalized U.S citizens.</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=45511c5c-2f11-4a14-844d-372f0930ce31">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [20]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">notes_df</span><span class="p">[</span><span class="n">notes_df</span><span class="p">[</span><span class="s1">'Notes &amp; Remarks'</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s1">'naturalized'</span><span class="p">)][:</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[20]:</div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>itemID</th>
+<th>Number</th>
+<th>fullName</th>
+<th>Prefix</th>
+<th>Last Name</th>
+<th>First Name</th>
+<th>Middle Name</th>
+<th>Suffix</th>
+<th>residenceAddress1</th>
+<th>residenceAddress2</th>
+<th>...</th>
+<th>ledger</th>
+<th>link</th>
+<th>Ledger Link</th>
+<th>Page</th>
+<th>pdfFileName</th>
+<th>symbolExists</th>
+<th>sNumber</th>
+<th>sErased</th>
+<th>Notes &amp; Remarks</th>
+<th>Column 29</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>697</th>
+<td>K00698</td>
+<td>1197.0</td>
+<td>C H Wells</td>
+<td>NaN</td>
+<td>Wells</td>
+<td>C</td>
+<td>H</td>
+<td>NaN</td>
+<td>1643 Stout</td>
+<td>NaN</td>
+<td>...</td>
+<td>MSS.366.5</td>
+<td>h-co.org/ledger2</td>
+<td>MSS.366.5</td>
+<td>35</td>
+<td>mss366-5_FC-p74_QC</td>
+<td>False</td>
+<td>False</td>
+<td>False</td>
+<td>name struck; " never-naturalized"</td>
+<td>NaN</td>
+</tr>
+</tbody>
+</table>
+<p>1 rows × 34 columns</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=79f95482-1da1-4923-afa5-7b2dea595362">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<div align="center">
+<img alt="Description of image" src="../assets/img/wells-sc-kkk.png" style="border: 2px solid" width="60%"/>
+<figcaption style="font-style: italic">
+    What C.H Well's entry looks like in the ledger, for reference.
+  </figcaption>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=83471a87-214f-406d-aec5-5c6c60852153">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Overall, the notes &amp; remarks column are a great way for the index to show how some data was situated in the ledger itself. Without the inclusion of this column, the kkk-dataset would look more like "raw" data than actual "cooked" data because it would not show that this ledger was physically annotated by the original authors.</p>
+<p>Some limitations of this data include the lack of context for addresses and Denver itself. Many of the addresses and buildings referenced in the ledgers might not exist today or have moved. For example, some locations are linked to Auraria and Empower Field as both were previously neighborhoods. The area around the Bronco's Stadium in particular was a thriving Jewish neighborhood in early 20th Century. What might be missing for this data is a map of 1920s Denver that can line up with the data.</p>
 </div>
 </div>
 </div>
@@ -7564,3 +9307,5 @@ a.anchor-link {
 </main>
 </body>
 </html>
+
+
